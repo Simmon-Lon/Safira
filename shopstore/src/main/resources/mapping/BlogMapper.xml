@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simmon.shopstore.repository.BlogMapper">
+
+    <!--    //查询 博客标签 bTag
+    List<BTag> getBTag();-->
+    <select id="getBTag" resultType="com.simmon.shopstore.entity.BTag">
+        select * from btag
+    </select>
+
+<!--    //查询 博客评论表 bComment
+    List<BComment> getBComment();-->
+    <select id="getBComment" resultType="com.simmon.shopstore.entity.BComment">
+        select * from bcomment
+    </select>
+
+<!--    //查询分类表 blogtype
+    List<BlogType> getBlogType();-->
+    <select id="getBlogType" resultType="com.simmon.shopstore.entity.BlogType">
+        select * from blogtype
+    </select>
+
+
+    <!--//查询留言
+    List<BLeavingMessage> getBLeavingMessage();-->
+    <select id="getBLeavingMessage" resultType="com.simmon.shopstore.entity.BLeavingMessage">
+        select * from bleavingmessage
+    </select>
+
+    <!--//增加一条评论
+    int insertBComment();-->
+    <insert id="insertBComment" parameterType="com.simmon.shopstore.entity.BComment">
+       INSERT INTO bcomment(cName,cContent,cTiem,cEmail,cWebSite,cImg)
+        VALUE(#{cName},#{cContent},#{cTiem},#{cEmail},#{cWebSite},#{cImg})
+    </insert>
+
+
+
+</mapper>

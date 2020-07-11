@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--调取css-->
+    <div th:fragment="stylecss">
+        <!-- CSS
+       ========================= -->
+        <!--bootstrap min css-->
+        <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/favicon.ico}">
+
+        <!-- CSS
+        ========================= -->
+        <!--bootstrap min css-->
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        <!--owl carousel min css-->
+        <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+        <!--slick min css-->
+        <link rel="stylesheet" th:href="@{/css/slick.css}">
+        <!--magnific popup min css-->
+        <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+        <!--font awesome css-->
+        <link rel="stylesheet" th:href="@{/css/font.awesome.css}">
+        <!--ionicons css-->
+        <link rel="stylesheet" th:href="@{/css/ionicons.min.css}">
+        <!--linearicons css-->
+        <link rel="stylesheet" th:href="@{/css/linearicons.css}">
+        <!--animate css-->
+        <link rel="stylesheet" th:href="@{/css/animate.css}">
+        <!--jquery ui min css-->
+        <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
+        <!--slinky menu css-->
+        <link rel="stylesheet" th:href="@{/css/slinky.menu.css}">
+        <!--plugins css-->
+        <link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+        <!-- Main Style CSS -->
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    </div>
+
+<!--js-->
+    <div th:fragment="stylejs">
+        <!--modernizr min js here-->
+        <script th:src="@{/js/vendor/modernizr-3.7.1.min.js}"></script>
+
+        <!-- JS
+        ============================================ -->
+        <!--jquery min js-->
+        <script th:src="@{/js/vendor/jquery-3.4.1.min.js}"></script>
+        <!--popper min js-->
+        <script th:src="@{/js/popper.js}"></script>
+        <!--bootstrap min js-->
+        <script th:src="@{/js/bootstrap.min.js}"></script>
+        <!--owl carousel min js-->
+        <script th:src="@{/js/owl.carousel.min.js}"></script>
+        <!--slick min js-->
+        <script th:src="@{/js/slick.min.js}"></script>
+        <!--magnific popup min js-->
+        <script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+        <!--counterup min js-->
+        <script th:src="@{/js/jquery.counterup.min.js}"></script>
+        <!--jquery countdown min js-->
+        <script th:src="@{/js/jquery.countdown.js}"></script>
+        <!--jquery ui min js-->
+        <script th:src="@{/js/jquery.ui.js}"></script>
+        <!--jquery elevatezoom min js-->
+        <script th:src="@{/js/jquery.elevatezoom.js}"></script>
+        <!--isotope packaged min js-->
+        <script th:src="@{/js/isotope.pkgd.min.js}"></script>
+        <!--slinky menu js-->
+        <script th:src="@{/js/slinky.menu.js}"></script>
+        <!-- Plugins JS -->
+        <script th:src="@{/js/plugins.js}"></script>
+
+        <!-- Main JS -->
+        <script th:src="@{/js/main.js}"></script>
+
+
+    </div>
+</body>
+</html>

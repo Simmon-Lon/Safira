@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simmon.shopstore.repository.ShopDao">
+    <!--查询所有的数据-->
+    <select id="getAllProduct" resultMap="productResultMap">
+        SELECT * FROM safira_product p
+        LEFT JOIN safira_type t ON p.`tid` = t.`tid`
+        LEFT JOIN safira_unit u ON  p.`unit_id` = u.`unit_id`
+        LEFT  JOIN  safira_comments c ON p.`pid` = c.`pid`
+       LEFT  JOIN  safira_img i ON  p.`i_id` = i.`i_id`
+        where i.`size` = 1
+    </select>
+    <select id="selectType" resultType="type">
+        select * from safira_type
+    </select>
+    <!--根据id查询 跳转到product-detils页面-->
+    <select id="selectPidProduct" resultMap="productResultMap">
+        SELECT * FROM safira_product p
+        LEFT JOIN safira_type t ON p.`tid` = t.`tid`
+        LEFT JOIN safira_unit u ON  p.`unit_id` = u.`unit_id`
+         LEFT  JOIN  safira_comments c ON p.`pid` = c.`pid`
+           LEFT  JOIN  safira_img  i ON  p.`i_id` = i.`i_id`
+        where p.`pid` = #{pid}  and i.`size`=1
+    </select>
+    <select  id="selectMax" resultType="product">
+        SELECT MAX(`originalPrice`) FROM `safira_product`
+    </select>
+    <select  id="selectMin" resultType="product">
+        SELECT MIN(`originalPrice`) FROM `safira_product`
+    </select>
+    <!--根据类别查询商品-->
+    <select id="selectidProduct" resultMap="productResultMap">
+        SELECT * FROM safira_product p
+        LEFT JOIN safira_type t ON p.`tid` = t.`tid`
+        LEFT JOIN safira_unit u ON p.`unit_id` = u.`unit_id`
+        LEFT JOIN safira_comments c ON p.`pid` = c.`pid`
+        LEFT JOIN safira_img i ON p.`i_id` = i.`i_id`
+        <if test="tid != null and tid != ''  ">
+            where t.`tid`= #{tid} and i.`size` = 1
+        </if>
+        <if test="pname != null and pname != ''  ">
+            where   p.`pname` like concat(concat('%',#{pname}),'%') and i.`size` = 1
+        </if>
+<!--        <if test="pname != null and pname != '' and tid != null and tid != ''">
+          where p.`pname` like concat(concat('%',#{pname=1}),'%')and i.`size` = 1
+        </if>
+        <if test="pname = null and pname = '' and tid = null and tid = ''">
+            where p.`pname` like concat(concat('%',#{pname=1},'%') and i.`size` = 1
+        </if>-->
+   <!--     <choose>
+            <when test="tid != null and tid != ''">
+                where t.`tid`= #{tid} and i.`size` = 1
+                <if test="pname != null and pname != ''  ">
+                    and p.`pname` like #{pname} and i.`size` = 1
+                </if>
+            </when>
+            <otherwise>
+                <if test="pname != null and pname != ''  ">
+                    and p.`pname` like #{pname} and i.`size` = 1
+                </if>
+            </otherwise>
+        </choose>-->
+    </select>
+    <!--查询图片-->
+    <select id="selectBigImgAll" resultType="img">
+         SELECT * FROM safira_product p
+           LEFT  JOIN  safira_img i ON  p.`i_id` = i.`i_id`
+           where p.`pid`=#{iid} and i.`size`=1
+    </select>
+    <select id="selectSmallImgAll" resultType="img">
+          SELECT * FROM safira_product p
+           LEFT  JOIN  safira_img i ON  p.`i_id` = i.`i_id`
+           where p.`pid`=#{iid} and i.`size`=2
+    </select>
+    <select id="selectPices" resultMap="productResultMap">
+        SELECT * FROM safira_product p
+       LEFT JOIN safira_type t ON p.`tid` = t.`tid`
+       LEFT JOIN safira_unit u ON  p.`unit_id` = u.`unit_id`
+       LEFT  JOIN  safira_comments c ON p.`pid` = c.`pid`
+       LEFT  JOIN  safira_img i ON  p.`i_id` = i.`i_id`
+    <where>
+        <if test="maxs != null and maxs !='' ">
+            and i.`size`=1   and #{maxs}>=p.`originalPrice`
+        </if>
+        <if test="mins != null and mins !='' ">
+            and i.`size`=1   and p.`originalPrice`>=#{mins}
+        </if>
+    </where>
+    </select>
+    <!--    # 低价排序-->
+    <select id="searchLowPrice" resultMap="productResultMap">
+    SELECT * FROM safira_product p
+    LEFT JOIN safira_type t ON p.`tid` = t.`tid`
+    LEFT JOIN safira_unit u ON  p.`unit_id` = u.`unit_id`
+    LEFT  JOIN  safira_comments c ON p.`pid` = c.`pid`
+    LEFT  JOIN  safira_img i ON  p.`i_id` = i.`i_id`
+      WHERE i.`size`=1
+    ORDER BY p.`originalPrice` ASC
+    </select>
+    <!--    # 高价排序-->
+    <select id="searchHigPrice" resultMap="productResultMap">
+    SELECT * FROM safira_product p
+    LEFT JOIN safira_type t ON p.`tid` = t.`tid`
+    LEFT JOIN safira_unit u ON p.`unit_id` = u.`unit_id`
+    LEFT JOIN safira_comments c ON p.`pid` = c.`pid`
+    LEFT JOIN safira_img i ON p.`i_id` = i.`i_id`
+      WHERE i.`size`=1
+    ORDER BY p.`originalPrice` DESC
+    </select>
+    <!--    #评分高-->
+    <select id="searchScore" resultMap="productResultMap">
+    SELECT * FROM safira_product p
+    LEFT JOIN safira_type t ON p.`tid` = t.`tid`
+    LEFT JOIN safira_unit u ON p.`unit_id` = u.`unit_id`
+    LEFT JOIN safira_comments c ON p.`pid` = c.`pid`
+    LEFT JOIN safira_img i ON p.`i_id` = i.`i_id`
+      WHERE i.`size`=1
+    ORDER BY p.`P_score` DESC
+    </select>
+    <!--查询评论表-->
+    <select id="selectComments" resultMap="commentsMaop">
+             SELECT * FROM  safira_comments c INNER JOIN
+        safira_product p ON c.`pid` = p.`pid`
+        INNER JOIN safira_user u ON u.uid = c.uid
+        where p.pid = #{pid}
+    </select>
+    <!--购物车增加-->
+    <insert id="addCart" parameterType="Carts">
+        INSERT INTO `carts`(cname,pPrice,imgSrc,mode,pid,uid)
+        VALUES(#{cname},#{pPrice},#{imgSrc},#{mode},#{pid},#{uid})
+    </insert>
+    <!--购物车查询-->
+    <select id="selectCart" resultType="Carts">
+        SELECT * FROM carts WHERE uid = #{uid}
+    </select>
+    <!--根据用户名查询yonghuid-->
+    <select id="selectLoginuser" resultType="Login">
+        SELECT * FROM login WHERE lusername = #{lusername}
+    </select>
+    <!--删除购物车-->
+    <delete id="deleteCart" parameterType="Carts">
+        delete from carts where cid = #{cid}
+    </delete>
+    <!--增加数量-->
+    <update id="updateCountProduct" parameterType="Carts">
+        UPDATE carts SET `count`=#{count} WHERE cid = #{cid}
+    </update>
+    <!--增加合作-->
+    <insert id="addT" parameterType="temp">
+        INSERT INTO temp(`name`,`phone`,`email`,`address`,`tempname`,`Reason`)
+VALUES(#{name},#{phone},#{email},#{address},#{tempname},#{Reason})
+    </insert>
+    <select id="selectT" resultType="temp">
+        select * from temp;
+    </select>
+    <!-- 使用resultMap映射实体类和字段之间的一一对应关系 -->
+    <resultMap id="productResultMap" type="product">
+        <id column="pid" property="pid"/>
+        <result column="pname" property="pname"/>
+        <result column="tid" property="tid"/>
+        <result column="maxs" property="maxs"/>
+        <result column="mins" property="mins"/>
+        <result column="p_score" property="pScore"/>
+        <result column="describe" property="describe"/>
+        <result column="sourceaddress" property="sourceaddress"/>
+        <result column="originalPrice" property="originalPrice"/>
+        <result column="discountPirce" property="discountPirce"/>
+        <result column="unit_id" property="unitIid"/>
+        <result column="createby" property="createby"/>
+        <result column="modifyby" property="modifyby"/>
+        <result column="createbyDate" property="createbyDate"/>
+        <collection property="comments" ofType="com.simmon.shopstore.entity.comments">
+            <result column="pid" property="pid"></result>
+            <result column="context" property="context"></result>
+            <result column="Score" property="Score"></result>
+            <result column="uid" property="uid"></result>
+        </collection>
+        <collection property="type" ofType="type">
+            <id column="tid" property="tid"/>
+            <result column="tname" property="tname"></result>
+        </collection>
+        <collection property="unit" ofType="unit">
+            <id column="unit_id" property="unitId"/>
+            <result column="unit_name" property="unitName"></result>
+        </collection>
+        <collection property="img" ofType="img">
+            <result column="i_id" property="iid"/>
+            <result column="size" property="size"></result>
+            <result column="src" property="src"></result>
+        </collection>
+    </resultMap>
+    <resultMap id="commentsMaop" type="com.simmon.shopstore.entity.comments">
+        <result column="pid" property="pid"/>
+        <result column="context" property="context"/>
+        <result column="i_id" property="iId"/>
+        <result column="Score" property="Score"/>
+        <result column="uid" property="uid"/>
+        <collection property="user" ofType="user">
+            <id column="uid" property="uid"/>
+            <result column="name" property="name"/>
+        </collection>
+
+    </resultMap>
+</mapper>

@@ -1,0 +1,860 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>产品列表筛选</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <!-- CSS
+    ========================= -->
+    <!--bootstrap min css-->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!--owl carousel min css-->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+    <!--slick min css-->
+    <link rel="stylesheet" th:href="@{/css/slick.css}">
+    <!--magnific popup min css-->
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <!--font awesome css-->
+    <link rel="stylesheet" th:href="@{/css/font.awesome.css}">
+    <!--ionicons css-->
+    <link rel="stylesheet" th:href="@{/css/ionicons.min.css}">
+    <!--linearicons css-->
+    <link rel="stylesheet" th:href="@{/css/linearicons.css}">
+    <!--animate css-->
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <!--jquery ui min css-->
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
+    <!--slinky menu css-->
+    <link rel="stylesheet" th:href="@{/css/slinky.menu.css}">
+    <!--plugins css-->
+    <link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!--modernizr min js here-->
+    <script th:src="@{/js/vendor/modernizr-3.7.1.min.js}"></script>
+</head>
+
+<body>
+
+<!--header area start-->
+
+<!--offcanvas menu area start-->
+<div class="off_canvars_overlay">
+
+</div>
+<div class="offcanvas_menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="canvas_open">
+                    <a href="javascript:void(0)"><i class="icon-menu"></i></a>
+                </div>
+                <div class="offcanvas_menu_wrapper">
+                    <div class="canvas_close">
+                        <a href="javascript:void(0)"><i class="icon-x"></i></a>
+                    </div>
+                    <div class="language_currency">
+                        <ul>
+                            <li class="language"><a href="#">语言 <i class="icon-right ion-ios-arrow-down"></i></a>
+                                <ul class="dropdown_language">
+                                    <li><a href="#">汉语</a></li>
+                                    <li><a href="#">英语</a></li>
+                                    <li><a href="#">法语</a></li>
+                                    <li><a href="#">西班牙语</a></li>
+                                    <li><a href="#">俄语</a></li>
+                                </ul>
+                            </li>
+                            <li class="currency"><a href="#"><font style="vertical-align: inherit;"><font
+                                    style="vertical-align: inherit;"> 货币 </font></font><i
+                                    class="icon-right ion-ios-arrow-down"></i></a>
+                                <ul class="dropdown_currency">
+                                    <li><a href="#">￥ 人民币</a></li>
+                                    <li><a href="#">€ 欧元</a></li>
+                                    <li><a href="#">£ 英镑</a></li>
+                                    <li><a href="#">$ 美元</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header_social text-right">
+                        <ul>
+                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
+                            <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
+                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="search_container">
+                        <form action="#">
+                            <div class="hover_category">
+                                <select class="select_option" name="select" id="categori1">
+                                    <option selected value="1">欢迎来到商店!</option>
+                                </select>
+                            </div>
+                            <div class="search_box">
+                                <input placeholder="搜索的商品..." type="text">
+                                <button type="submit"><span class="lnr lnr-magnifier"></span></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="header_account_area">
+                        <div class="header_account_list register">
+                            <ul>
+                                <li><a href="login.html">注册</a></li>
+                                <li><span>/</span></li>
+                                <li><a href="login.html">登录</a></li>
+                            </ul>
+                        </div>
+                        <div class="header_account_list header_wishlist">
+                            <a href="wishlist.html"><span class="lnr lnr-heart"></span> <span
+                                    class="item_count">3</span> </a>
+                        </div>
+                        <div class="header_account_list  mini_cart_wrapper">
+                            <a href="javascript:void(0)"><span class="lnr lnr-cart"></span><span
+                                    class="item_count">2</span></a>
+                            <!--小购物车-->
+                            <div class="mini_cart">
+                                <div class="cart_gallery">
+                                </div>
+                                <div class="mini_cart_table">
+                                    <div class="cart_table_border">
+                                        <div class="cart_total">
+                                            <span>总计:</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mini_cart_footer">
+                                    <div class="cart_button">
+                                        <a href="cart.html"><i class="fa fa-shopping-cart"></i> 购物车</a>
+                                    </div>
+                                    <div class="cart_button">
+                                        <a href="checkout.html"><i class="fa fa-sign-in"></i> 结算</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--mini cart end-->
+                        </div>
+                    </div>
+                    <div class="call-support">
+                        <p><a href="tel:(08)23456789">(08) 23 456 789</a> 客服服务</p>
+                    </div>
+                    <div id="menu" class="text-left ">
+                        <ul class="offcanvas_main_menu">
+                            <li class="menu-item-has-children active">
+                                <a href="#">首页</a>
+                                <ul class="sub-menu">
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Shop</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Shop Layouts</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="shop.html">shop</a></li>
+                                            <li><a href="shop-fullwidth.html">Full Width</a></li>
+                                            <li><a href="shop-fullwidth-list.html">Full Width list</a></li>
+                                            <li><a href="shop-right-sidebar.html">Right Sidebar </a></li>
+                                            <li><a href="shop-right-sidebar-list.html"> Right Sidebar list</a></li>
+                                            <li><a href="shop-list.html">List View</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">other Pages</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="cart.html">cart</a></li>
+                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="my-account.html">my account</a></li>
+                                            <li><a href="404.html">Error 404</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Product Types</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="product-details.html">product details</a></li>
+                                            <li><a href="product-sidebar.html">product sidebar</a></li>
+                                            <li><a href="product-grouped.html">product grouped</a></li>
+                                            <li><a href="variable-product.html">product variable</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog.html">blog</a></li>
+                                    <li><a href="blog-details.html">blog details</a></li>
+                                    <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
+                                    <li><a href="blog-sidebar.html">blog sidebar</a></li>
+                                </ul>
+
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">其他页面</a>
+                                <ul class="sub-menu">
+                                    <li><a th:href="@{/shopstore/about}">关于我们</a></li>
+                                    <li><a th:href="@{/shopstore/service}">提供服务</a></li>
+                                    <li><a th:href="@{/shopstore/faq}">遇到的问题</a></li>
+                                    <li><a th:href="@{/shopstore/contact}">联系</a></li>
+                                    <li><a th:href="@{/shopstore/login}">登录</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="my-account.html">我的账户</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a th:href="@{/shopstore/about}">关于我们</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a th:href="@{/shopstore/contact}"> 联系我们</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="offcanvas_footer">
+                        <span><a href="#"><i class="fa fa-envelope-o"></i> info@yourdomain.com</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--offcanvas menu area end-->
+
+<header>
+    <div class="main_header">
+        <div class="header_top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="language_currency">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="header_social text-right">
+                            <ul>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_middle">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="index.html"><img src="/img/logo/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="header_right_info">
+                            <div class="search_container">
+                                <form th:action=" @{'/searchs?username='+${username}}" method="post">
+                                    <div class="hover_category">
+                                        <select class="select_option" name="searchtid" id="categori2" >
+                                            <option  value="0">全部</option>
+                                            <option  value="1">蛋类</option>
+                                            <option  value="2">新鲜水果</option>
+                                            <option  value="3">来自鲜的蔬菜</option>
+                                            <option  value="4">肉类</option>
+                                        </select>
+                                    </div>
+                                    <div class="search_box">
+                                        <input placeholder="请输入商品名!" name="searchpname" type="text">
+                                        <button type="submit"><span class="lnr lnr-magnifier"></span></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="header_account_area">
+                                <div class="header_account_list register">
+                                    <ul>
+                                        <span th:if="${session.username == null}"><li><a
+                                                href="login.html">注册</a></li></span>
+                                        <span th:if="${session.username !=null}"><li><a href="/shopstore/logout">退出</a></span>
+                                        <li><span>/</span></li>
+                                        <span th:if="${session.username != null}"><li><a href="login.html"
+                                                                                         th:text="${session.username.lusername}"
+                                                                                         style="color:#fddf72;"></a></li></span>
+                                        <span th:if="${session.username == null}"><li><a
+                                                href="login.html">登录</a></li></span>
+                                    </ul>
+                                </div>
+                                <div class="header_account_list  mini_cart_wrapper">
+                                <a th:href="@{'/cart/selectCart?username='+${username}}"><span class="lnr lnr-cart"></span><span
+                                        class="item_count"></span></a>
+                                <!--mini cart end-->
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_bottom sticky-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3">
+                        <div class="categories_menu">
+                            <div class="categories_title">
+                                <h2 class="categori_toggle">欢迎来到商店!</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!--main menu start-->
+                        <div class="main_menu menu_position">
+                            <nav>
+                                <ul>
+                                    <li><a  href="/shopstore/index">首页<i class="fa fa-angle-down"></i></a>
+                                        <!-- <ul class="sub_menu">
+                                           &lt;!&ndash;  <li><a href="/shopstore/index">Home shop 4</a></li>&ndash;&gt;
+                                         </ul>-->
+                                    </li>
+                                    <li class="mega_items"><a th:href="@{'/shopList?username='+${username}}">商店<i class="fa fa-angle-down"></i></a>
+                                    </li>
+                                    <li><a href="blog.html" th:href="@{/shopstore/toBlogDetails}">博客<i class="fa fa-angle-down"></i></a>
+                                        <ul class="sub_menu pages">
+                                            <li><a href="blogfullwidth.html" th:href="@{/shopstore/toBlogDetails}">博客</a></li>
+                                            <li><a href="blogsidebar.html" th:href="@{/shopstore/toBlogSidebar}">博客侧栏</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">服务 <i class="fa fa-angle-down"></i></a>
+                                        <ul class="sub_menu pages">
+                                            <li><a th:href="@{/shopstore/about}">关于我们</a></li>
+                                            <li><a th:href="@{/shopstore/service}">服务</a></li>
+                                            <li><a th:href="@{/shopstore/faq}">常见问题</a></li>
+                                            <li><a th:href="@{/shopstore/contact}">联系</a></li>
+                                            <li><a th:href="@{/shopstore/login}">登录</a></li>
+                                            <li><a th:href="@{/selectT}">合作</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="active" th:href="@{/shopstore/contact}"> 关于我们</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--main menu end-->
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="call-support">
+                            <p><a href="tel:(08)23456789">(08) 23 456 789</a> 客户服务</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--header area end-->
+
+<!--breadcrumbs area start-->
+<div class="breadcrumbs_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <h3>商品</h3>
+                    <ul>
+                        <li><a href="/shopstore/index">首页</a></li>
+                        <li>商品列表</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--breadcrumbs area end-->
+
+<!--shop  area start-->
+<div class="shop_area shop_reverse mt-70 mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-12">
+                <!--sidebar widget start-->
+                <aside class="sidebar_widget">
+                    <div class="widget_inner">
+                        <div class="widget_list widget_categories">
+                            <h3>类别</h3>
+                            <ul>
+                                <li class="widget_sub_categories sub_categories1"><a href="javascript:void(0)">种类选择</a>
+                                    <ul class="widget_dropdown_categories dropdown_categories1">
+                                        <li th:each="types:${types}">
+                                            <a th:href="@{'/search?tid='+${types.getTid()}+'&username='+${username}}"
+                                               th:text="${types.getTname()}"></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="widget_sub_categories sub_categories2"><a href="javascript:void(0)">排序</a>
+                                    <ul class="widget_dropdown_categories dropdown_categories2">
+                                        <li><a th:href="@{'/search?pice=2&username='+${username}}">默认</a></li>
+                                        <li><a th:href="@{'/search?pice=1&username='+${username}}">价格高</a></li>
+                                        <li><a th:href="@{'/search?pice=0&username='+${username}}">价格低</a></li>
+                                        <li><a th:href="@{'/search?score=1&username='+${username}}">评分高</a></li>
+                                    </ul>
+                                </li>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="widget_list ">
+                            <!--价格筛选-->
+                            <h3>价格筛选</h3>
+                            <form method="post" th:action="@{'/picess?picesId=2&username='+${username}}">
+
+                                <input type="text" name="mins" class="form-control" placeholder="最低价格"/>
+                                <br/>
+                                <input type="text" name="maxs" class="form-control" placeholder="最高价格"/>
+                                <br/>
+                                <input type="submit" class="btn btn-success dropdown-toggle"/>
+                            </form>
+                        </div>
+
+
+                        <div class="widget_list banner_widget">
+                            <div class="banner_thumb">
+                                <a href="#"><img src="/assets/img/bg/banner17.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <!--sidebar widget end-->
+            </div>
+            <div class="col-lg-9 col-md-12">
+                <!--shop wrapper start-->
+                <!--shop toolbar start-->
+                <div class="shop_toolbar_wrapper">
+                    <div class="shop_toolbar_btn">
+
+                        <button data-role="grid_3" type="button" class=" btn-grid-3" data-toggle="tooltip"
+                                title="3"></button>
+
+                        <button data-role="grid_4" type="button" class=" btn-grid-4" data-toggle="tooltip"
+                                title="4"></button>
+
+                        <button data-role="grid_list" type="button" class="active btn-list" data-toggle="tooltip"
+                                title="List"></button>
+                    </div>
+                    <div class="page_amount">
+                        <p>[[${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd hh:mm:')}]]</p>
+                    </div>
+                </div>
+                <!--shop toolbar end-->
+
+
+                <!--竖排列表-->
+                <div class="row shop_wrapper grid_list" th:if="${not #lists.isEmpty(pageInfo.list)}">
+                    <div class="col-12" th:each="list:${pageInfo.list}">
+                        <div class="single_product">
+                            <div class="product_thumb">
+                                <a class="primary_img"
+                                   th:href="@{'/productdetails?pid='+${list.pid}+'&tid='+${list.getType().getTid()}+'&username='+${username}}">
+                                    <img th:src="@{${list.getImg().getSrc()}}"/> <input type="hidden" id="buttoncpid" th:value="${list.pid}">
+                                </a>
+                                <a class="secondary_img"
+                                   th:href="@{'/productdetails?pid='+${list.pid}+'&tid='+${list.getType().getTid()}+'&username='+${username}}">
+                                    <img th:src="@{${list.getImg().getSrc()}}"/>
+                                </a>
+                                <div class="label_product">
+
+                                </div>
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="add_to_cart"><a href="cart.html" title="Add to cart"><span
+                                                class="lnr lnr-cart"></span></a></li>
+                                        <li class="quick_button"><a href="#" data-toggle="modal"
+                                                                    data-target="#modal_box" title="quick view"> <span
+                                                class="lnr lnr-magnifier"></span></a></li>
+                                        <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span
+                                                class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="#" title="Add to Compare"><span
+                                                class="lnr lnr-sync"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--整块列表位置-->
+                            <div class="product_content grid_content">
+                                <h4 class="product_name"><a href="@{'/productdetails?pid='+${list.pid}}"></a></h4>
+                                <p><a href="#"
+                                      th:href="@{'/productdetails?pid='+${list.pid}+'&tid='+${list.getType().getTid()}+'&username='+${username}}">
+                                    <td>商品名:[[${list.pname}]]</td>
+                                    ></a></p>
+                                <div class="price_box">
+                                    <span class="current_price">[[${list.originalPrice}]]</span>
+                                    <span class="old_price">[[${list.discountPirce}]]</span>
+                                </div>
+                            </div>
+                            <div class="product_content list_content">
+                                <h4 class="product_name"><a
+                                        th:href="@{'/productdetails?pid='+${list.pid}+'&tid='+${list.getType().getTid()}+'&username='+${username}}">商品名:[[${list.pname}]]</a>
+                                </h4>
+                                <!--这里要写一个按照类别展示的表
+                                =================================================>
+                                -->
+                                <p><a href="#"
+                                      th:href="@{'/productdetails?pid='+${list.pid}+'&tid='+${list.getType().getTid()}+'&username='+${username}}">类别:[[${list.getType().getTname()}]]</a>
+                                </p>
+                                <div class="price_box">
+                                    <span class="current_price">原价:[[${list.originalPrice}]]</span>
+                                    <span class="old_price">折扣价:[[${list.discountPirce}]]</span>
+                                </div>
+                                <div class="product_desc">
+                                    <p>产地:[[${list.sourceaddress}]]</p>
+                                    <p>商品描述:[[${list.describe}]]</p>
+                                </div>
+
+                                <!--添加购物车-->
+
+                                <div class="action_links list_action_right">
+                                    <ul>
+                                        <li class="add_to_cart">
+                                            <a th:href="@{'/cart/addCart/?username='+${session.username.lusername}+'&pid='+${list.pid}}"  title="Add to cart">
+
+                                               Add to Cart
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!--                <script>
+                    function cart() {
+                        var pid = $("#buttoncpid").val();
+                        var username =$("#buttoncart").val();
+
+                        alert(pid+"ss"+username);
+                        $.ajax({
+                            url:"/cart/addCart",
+                            data:{pid:pid,username:username},
+                            type:"POST",
+                            dataType:'json',
+                            success:function (result=1) {
+                                alert(result)
+                                alert("添加成功了亲~"+result);
+                                /*$(location).prop('href','/shopList?username='+username+'&pageNumber='+1);*/
+                            },
+                            error:function (result=0) {
+                                alert(result)
+                                alert("请先登录哦!亲~"+result);
+                                $(location).prop('href','/shopstore/login.html');
+                            }
+                        });
+                    }
+                </script>-->
+
+                <div class="row shop_wrapper grid_list" th:if="${#lists.isEmpty(pageInfo.list)}">
+                    <div class="col-12">
+                        <p>没有你要搜索的内容哦!!</p>
+                    </div>
+                </div>
+
+
+                <div class="shop_toolbar t_bottom">
+
+                    <div class="pagination pagination-lg">
+                        <ul>
+                            <li th:if="${pageInfo.hasPreviousPage}">
+                                <a th:href="@{'/shopList?pageNumber=1&username='+${session.username.lusername}}">首页</a>
+                            </li>
+                            <li class="active" th:if="${pageInfo.hasPreviousPage}">
+                                <a th:href="@{'/shopList?pageNumber='+${pageInfo.pageNum-1}+'&username='+${session.username.lusername}}"> <<</a>
+                            </li>
+                            <li class="current">
+                                <a th:href="@{'/shopList?pageNumber='+${pageInfo.pageNum}++'&username='+${session.username.lusername}}"> [[${pageInfo.pageNum}]]</a>
+                            </li>
+                            <li th:if="${pageInfo.hasNextPage}">
+                                ......
+                            </li>
+                            <li th:if="${pageInfo.hasNextPage}">
+                                <a th:href="@{'/shopList?pageNumber='+${pageInfo.pageNum+1}+'&username='+${session.username.lusername}}"> >></a>
+                            </li>
+
+                            <li th:if="${pageInfo.hasNextPage}">
+                                <a th:href="@{'/shopList?pageNumber='+${pageInfo.pages}+'&username='+${session.username.lusername}}">末页</a>
+                            </li>
+
+                        </ul>
+                        <div th:if="${pageInfo.pageNum}==${pageInfo.pages}">
+                            &nbsp; &nbsp;亲 已经最后一页了哦~
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <!--shop toolbar end-->
+                <!--shop wrapper end-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--shop  area end-->
+
+<!--footer area start-->
+<footer class="footer_widgets footer_border">
+    <div class="container">
+        <div class="footer_top">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-7">
+                    <div class="widgets_container contact_us">
+                        <div class="footer_logo">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                        <p class="footer_desc">We are a team of designers and developers that create high quality
+                            eCommerce, WordPress, Shopify .</p>
+                        <p><span>Address:</span> 4710-4890 Breckinridge USA</p>
+                        <p><span>Email:</span> <a href="#">demo@hasthemes.com</a></p>
+                        <p><span>Call us:</span> <a href="tel:(08)23456789">(08) 23 456 789</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-5">
+                    <div class="widgets_container widget_menu">
+                        <h3>Information</h3>
+                        <div class="footer_menu">
+
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="#"> Privacy Policy</a></li>
+                                <li><a href="#"> Terms & Conditions</a></li>
+                                <li><a href="contact.html"> Contact Us</a></li>
+                                <li><a href="#"> Site Map</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="widgets_container widget_menu">
+                        <h3>Extras</h3>
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="#">Brands</a></li>
+                                <li><a href="#"> Gift Certificates</a></li>
+                                <li><a href="#">Affiliate</a></li>
+                                <li><a href="#">Specials</a></li>
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#"> Order History</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="widgets_container widget_newsletter">
+                        <h3>Sign up newsletter</h3>
+                        <p class="footer_desc">Get updates by subscribe our weekly newsletter</p>
+                        <div class="subscribe_form">
+                            <form id="mc-form" class="mc-form footer-newsletter">
+                                <input id="mc-email" type="email" autocomplete="off" placeholder="Enter you email"/>
+                                <button id="mc-submit">Subscribe</button>
+                            </form>
+                            <!-- mailchimp-alerts Start -->
+                            <div class="mailchimp-alerts text-centre">
+                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                            </div><!-- mailchimp-alerts end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-7">
+                    <div class="copyright_area">
+                        <p>Copyright &copy; 2020.Company name All rights reserved.<a target="_blank"
+                                                                                     href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5">
+                    <div class="footer_payment">
+                        <ul>
+                            <li><a href="#"><img src="/assets/img/icon/paypal1.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="/assets/img/icon/paypal2.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="/assets/img/icon/paypal3.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="/assets/img/icon/paypal4.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer area end-->
+
+<!-- modal area start-->
+<div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="icon-x"></i></span>
+            </button>
+            <div class="modal_body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-12">
+                            <div class="modal_tab">
+                                <div class="tab-content product-details-large">
+                                    <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+                                        <div class="modal_tab_img">
+                                            <a href="#"><img src="/assets/img/product/productbig1.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab2" role="tabpanel">
+                                        <div class="modal_tab_img">
+                                            <a href="#"><img src="/assets/img/product/productbig2.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab3" role="tabpanel">
+                                        <div class="modal_tab_img">
+                                            <a href="#"><img src="/assets/img/product/productbig3.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab4" role="tabpanel">
+                                        <div class="modal_tab_img">
+                                            <a href="#"><img src="/assets/img/product/productbig4.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal_tab_button">
+                                    <ul class="nav product_navactive owl-carousel" role="tablist">
+                                        <li>
+                                            <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab"
+                                               aria-controls="tab1" aria-selected="false"><img
+                                                    src="/assets/img/product/product1.jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" data-toggle="tab" href="#tab2" role="tab"
+                                               aria-controls="tab2" aria-selected="false"><img
+                                                    src="/assets/img/product/product6.jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link button_three" data-toggle="tab" href="#tab3" role="tab"
+                                               aria-controls="tab3" aria-selected="false"><img
+                                                    src="/assets/img/product/product2.jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" data-toggle="tab" href="#tab4" role="tab"
+                                               aria-controls="tab4" aria-selected="false"><img
+                                                    src="/assets/img/product/product7.jpg" alt=""></a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-12">
+                            <div class="modal_right">
+                                <div class="modal_title mb-10">
+                                    <h2>Donec Ac Tempus</h2>
+                                </div>
+                                <div class="modal_price mb-10">
+                                    <span class="new_price">$64.99</span>
+                                    <span class="old_price">$78.99</span>
+                                </div>
+                                <div class="modal_description mb-15">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum
+                                        ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui
+                                        nemo ipsum numquam, reiciendis maiores quidem aperiam, rerum vel recusandae </p>
+                                </div>
+                                <div class="variants_selects">
+                                    <div class="variants_size">
+                                        <h2>size</h2>
+                                        <select class="select_option">
+                                            <option selected value="1">s</option>
+                                            <option value="1">m</option>
+                                            <option value="1">l</option>
+                                            <option value="1">xl</option>
+                                            <option value="1">xxl</option>
+                                        </select>
+                                    </div>
+                                    <div class="variants_color">
+                                        <h2>color</h2>
+                                        <select class="select_option">
+                                            <option selected value="1">purple</option>
+                                            <option value="1">violet</option>
+                                            <option value="1">black</option>
+                                            <option value="1">pink</option>
+                                            <option value="1">orange</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal_add_to_cart">
+                                        <form action="#">
+                                            <input min="1" max="100" step="2" value="1" type="number">
+                                            <button type="submit">add to cart</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal_social">
+                                    <h2>Share this product</h2>
+                                    <ul>
+                                        <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                        <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal area end-->
+
+<!--footer area end-->
+<script th:src="@{/js/vendor/jquery-3.4.1.min.js}"></script>
+<!--popper min js-->
+<script th:src="@{/js/popper.js}"></script>
+<!--bootstrap min js-->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!--owl carousel min js-->
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<!--slick min js-->
+<script th:src="@{/js/slick.min.js}"></script>
+<!--magnific popup min js-->
+<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<!--counterup min js-->
+<script th:src="@{/js/jquery.counterup.min.js}"></script>
+<!--jquery countdown min js-->
+<script th:src="@{/js/jquery.countdown.js}"></script>
+<!--jquery ui min js-->
+<script th:src="@{/js/jquery.ui.js}"></script>
+<!--jquery elevatezoom min js-->
+<script th:src="@{/js/jquery.elevatezoom.js}"></script>
+<!--isotope packaged min js-->
+<script th:src="@{/js/isotope.pkgd.min.js}"></script>
+<!--slinky menu js-->
+<script th:src="@{/js/slinky.menu.js}"></script>
+<!-- Plugins JS -->
+<script th:src="@{/js/plugins.js}"></script>
+
+<!-- Main JS -->
+<script th:src="@{/js/main.js}"></script>
+
+
+
+</body>
+
+</html>

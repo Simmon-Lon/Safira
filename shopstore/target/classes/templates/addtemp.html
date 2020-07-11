@@ -1,0 +1,670 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>合作</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <!-- CSS
+    ========================= -->
+    <!--bootstrap min css-->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!--owl carousel min css-->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+    <!--slick min css-->
+    <link rel="stylesheet" th:href="@{/css/slick.css}">
+    <!--magnific popup min css-->
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <!--font awesome css-->
+    <link rel="stylesheet" th:href="@{/css/font.awesome.css}">
+    <!--ionicons css-->
+    <link rel="stylesheet" th:href="@{/css/ionicons.min.css}">
+    <!--linearicons css-->
+    <link rel="stylesheet" th:href="@{/css/linearicons.css}">
+    <!--animate css-->
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <!--jquery ui min css-->
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
+    <!--slinky menu css-->
+    <link rel="stylesheet" th:href="@{/css/slinky.menu.css}">
+    <!--plugins css-->
+    <link rel="stylesheet" th:href="@{/css/plugins.css}">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!--modernizr min js here-->
+    <
+</head>
+
+<body>
+
+    <!--header area start-->
+    
+    <!--offcanvas menu area start-->
+    <div class="off_canvars_overlay">
+                
+    </div>
+    <div class="offcanvas_menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="canvas_open">
+                        <a href="javascript:void(0)"><i class="icon-menu"></i></a>
+                    </div>
+                    <div class="offcanvas_menu_wrapper">
+                        <div class="canvas_close">
+                            <a href="javascript:void(0)"><i class="icon-x"></i></a>  
+                        </div>
+                        <div class="language_currency">
+                            <ul>
+                                <li class="language"><a href="#"> Language <i class="icon-right ion-ios-arrow-down"></i></a>
+                                    <ul class="dropdown_language">
+                                        <li><a href="#">French</a></li>
+                                        <li><a href="#">Spanish</a></li>
+                                        <li><a href="#">Russian</a></li>
+                                    </ul>
+                                </li>
+                                <li class="currency"><a href="#"> Currency <i class="icon-right ion-ios-arrow-down"></i></a>
+                                    <ul class="dropdown_currency">
+                                        <li><a href="#">€ Euro</a></li>
+                                        <li><a href="#">£ Pound Sterling</a></li>
+                                        <li><a href="#">$ US Dollar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header_social text-right">
+                            <ul>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="search_container">
+                           <form action="#">
+                               <div class="hover_category">
+                                    <select class="select_option" name="select" id="categori1">
+                                        <option selected value="1">Select a categories</option>
+                                        <option value="2">Accessories</option>
+                                        <option value="3">Accessories & More</option>
+                                        <option value="4">Butters & Eggs</option>
+                                        <option value="5">Camera & Video </option>
+                                        <option value="6">Mornitors</option>
+                                        <option value="7">Tablets</option>
+                                        <option value="8">Laptops</option>
+                                        <option value="9">Handbags</option>
+                                        <option value="10">Headphone & Speaker</option>
+                                        <option value="11">Herbs & botanicals</option>
+                                        <option value="12">Vegetables</option>
+                                        <option value="13">Shop</option>
+                                        <option value="14">Laptops & Desktops</option>
+                                        <option value="15">Watchs</option>
+                                        <option value="16">Electronic</option>
+                                    </select>                        
+                               </div>
+                                <div class="search_box">
+                                    <input placeholder="Search product..." type="text">
+                                     <button type="submit"><span class="lnr lnr-magnifier"></span></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="header_account_area">
+                            <div class="header_account_list register">
+                                <ul>
+                                    <li><a href="login.html">Register</a></li>
+                                    <li><span>/</span></li>
+                                    <li><a href="login.html">Login</a></li>
+                                </ul>
+                            </div>
+                            <div class="header_account_list header_wishlist">
+                                <a href="wishlist.html"><span class="lnr lnr-heart"></span> <span class="item_count">3</span> </a>
+                            </div>
+                            <div class="header_account_list  mini_cart_wrapper">
+                               <a href="javascript:void(0)"><span class="lnr lnr-cart"></span><span class="item_count">2</span></a>
+                                <!--mini cart-->
+                                <div class="mini_cart">
+                                    <div class="cart_gallery">
+                                        <div class="cart_item">
+                                           <div class="cart_img">
+                                               <a href="#"><img src="/assets/img/s-product/product.jpg" alt=""></a>
+                                           </div>
+                                            <div class="cart_info">
+                                                <a href="#">Primis In Faucibus</a>
+                                                <p>1 x <span> $65.00 </span></p>    
+                                            </div>
+                                            <div class="cart_remove">
+                                                <a href="#"><i class="icon-x"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="cart_item">
+                                           <div class="cart_img">
+                                               <a href="#"><img src="/assets/img/s-product/product2.jpg" alt=""></a>
+                                           </div>
+                                            <div class="cart_info">
+                                                <a href="#">Letraset Sheets</a>
+                                                <p>1 x <span> $60.00 </span></p>    
+                                            </div>
+                                            <div class="cart_remove">
+                                                <a href="#"><i class="icon-x"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mini_cart_table">
+                                        <div class="cart_table_border">
+                                            <div class="cart_total">
+                                                <span>Sub total:</span>
+                                                <span class="price">$125.00</span>
+                                            </div>
+                                            <div class="cart_total mt-10">
+                                                <span>total:</span>
+                                                <span class="price">$125.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mini_cart_footer">
+                                       <div class="cart_button">
+                                            <a href="cart.html"><i class="fa fa-shopping-cart"></i> View cart</a>
+                                        </div>
+                                        <div class="cart_button">
+                                            <a href="checkout.html"><i class="fa fa-sign-in"></i> Checkout</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--mini cart end-->
+                           </div>
+                        </div>
+                        <div class="call-support">
+                            <p><a href="tel:(08)23456789">(08) 23 456 789</a> Customer Support</p>
+                        </div>
+                        <div id="menu" class="text-left ">
+                            <ul>
+                                <li><a  href="/shopstore/index">首页<i class="fa fa-angle-down"></i></a>
+                                    <!-- <ul class="sub_menu">
+                                       &lt;!&ndash;  <li><a href="/shopstore/index">Home shop 4</a></li>&ndash;&gt;
+                                     </ul>-->
+                                </li>
+                                <li class="mega_items"><a th:href="@{'/shopList?username='+${session.username.lusername}}">商店<i class="fa fa-angle-down"></i></a>
+                                </li>
+                                <li><a href="blog.html" th:href="@{/shopstore/toBlogDetails}">博客<i class="fa fa-angle-down"></i></a>
+                                    <ul class="sub_menu pages">
+                                        <li><a href="blogfullwidth.html" th:href="@{/shopstore/toBlogDetails}">博客</a></li>
+                                        <li><a href="blogsidebar.html" th:href="@{/shopstore/toBlogSidebar}">博客侧栏</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">服务 <i class="fa fa-angle-down"></i></a>
+                                    <ul class="sub_menu pages">
+                                        <li><a th:href="@{/shopstore/about}">关于我们</a></li>
+                                        <li><a th:href="@{/shopstore/service}">服务</a></li>
+                                        <li><a th:href="@{/shopstore/faq}">常见问题</a></li>
+                                        <li><a th:href="@{/shopstore/contact}">联系</a></li>
+                                        <li><a th:href="@{/shopstore/login}">登录</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="active" th:href="@{/shopstore/contact}"> 关于我们</a></li>
+                            </ul>
+                        </div>
+                        <div class="offcanvas_footer">
+                            <span><a href="#"><i class="fa fa-envelope-o"></i> info@yourdomain.com</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--offcanvas menu area end-->
+
+    <header>
+        <div class="main_header">
+            <div class="header_top">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="language_currency">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="header_social text-right">
+                                <ul>
+                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_middle">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2">
+                            <div class="logo">
+                                <a href="index.html"><img src="/img/logo/logo.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="header_right_info">
+                                <div class="search_container">
+                                    <form action="#">
+                                        <div class="hover_category">
+                                            <select class="select_option" name="select" id="categori2">
+                                                <option selected="" value="1">选择一个类别</option>
+                                                <option value="2">配饰</option>
+                                                <option value="3">配件及更多</option>
+                                                <option value="4">黄油和鸡蛋</option>
+                                                <option value="5">相机和视频 </option>
+                                                <option value="6">nit徒</option>
+                                                <option value="7">平板电脑</option>
+                                                <option value="8">手提电脑</option>
+                                                <option value="9">手袋</option>
+                                                <option value="10">耳机和喇叭</option>
+                                                <option value="11">草药和植物药</option>
+                                                <option value="12">蔬菜</option>
+                                                <option value="13">店</option>
+                                                <option value="14">笔记本电脑和台式机</option>
+                                                <option value="15">手表</option>
+                                                <option value="16">电子</option>
+                                            </select>
+                                        </div>
+                                        <div class="search_box">
+                                            <input placeholder="搜索产品..." type="text">
+                                            <button type="submit"><span class="lnr lnr-magnifier"></span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="header_account_area">
+                                    <div class="header_account_list register">
+                                        <ul>
+                                            <span th:if="${session.username == null}"><li><a href="/shopstore/login">注册</a></li></span>
+                                            <span th:if="${session.username !=null}"><li><a href="/shopstore/logout">退出</a></span>
+                                            <li><span>/</span></li>
+                                            <span th:if="${session.username != null}"><li><a href="/shopstore/login" th:text="${session.username.lusername}" style="color:#fddf72;"></a></li></span>
+                                            <span th:if="${session.username == null}"><li><a href="/shopstore/login">登录</a></li></span>
+                                        </ul>
+                                    </div>
+                                    <div class="header_account_list  mini_cart_wrapper">
+                                        <a th:href="@{'/cart/selectCart?username='+${session.username.lusername}}"><span class="lnr lnr-cart"></span><span
+                                                class="item_count"></span></a>
+                                        <!--mini cart end-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_bottom sticky-header">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3">
+                            <div class="categories_menu">
+                                <div class="categories_title">
+                                    <h2 class="categori_toggle">所有类别</h2>
+                                </div>
+                                <div class="categories_menu_toggle">
+                                    <ul>
+                                        <li class="menu_item_children"><a href="#">衣服<i class="fa fa-angle-right"></i></a>
+                                            <ul class="categories_mega_menu">
+                                                <li class="menu_item_children"><a href="#">洋装</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Sweater</a></li>
+                                                        <li><a href="">Evening</a></li>
+                                                        <li><a href="">Day</a></li>
+                                                        <li><a href="">Sports</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu_item_children"><a href="#">Handbags</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Shoulder</a></li>
+                                                        <li><a href="">Satchels</a></li>
+                                                        <li><a href="">kids</a></li>
+                                                        <li><a href="">coats</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu_item_children"><a href="#">shoes</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Ankle Boots</a></li>
+                                                        <li><a href="">Clog sandals </a></li>
+                                                        <li><a href="">run</a></li>
+                                                        <li><a href="">Books</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu_item_children"><a href="#">Clothing</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Coats  Jackets </a></li>
+                                                        <li><a href="">Raincoats</a></li>
+                                                        <li><a href="">Jackets</a></li>
+                                                        <li><a href="">T-shirts</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu_item_children"><a href="#">Fruits  <i class="fa fa-angle-right"></i></a>
+                                            <ul class="categories_mega_menu column_3">
+                                                <li class="menu_item_children"><a href="#">Chair</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Dining room</a></li>
+                                                        <li><a href="">bedroom</a></li>
+                                                        <li><a href=""> Home & Office</a></li>
+                                                        <li><a href="">living room</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu_item_children"><a href="#">Lighting</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Ceiling Lighting</a></li>
+                                                        <li><a href="">Wall Lighting</a></li>
+                                                        <li><a href="">Outdoor Lighting</a></li>
+                                                        <li><a href="">Smart Lighting</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu_item_children"><a href="#">Sofa</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Fabric Sofas</a></li>
+                                                        <li><a href="">Leather Sofas</a></li>
+                                                        <li><a href="">Corner Sofas</a></li>
+                                                        <li><a href="">Sofa Beds</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu_item_children"><a href="#"> Salads<i class="fa fa-angle-right"></i></a>
+                                            <ul class="categories_mega_menu column_2">
+                                                <li class="menu_item_children"><a href="#">Brake Tools</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Driveshafts</a></li>
+                                                        <li><a href="">Spools</a></li>
+                                                        <li><a href="">Diesel </a></li>
+                                                        <li><a href="">Gasoline</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu_item_children"><a href="#">Emergency Brake</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Dolls for Girls</a></li>
+                                                        <li><a href="">Girls' Learning Toys</a></li>
+                                                        <li><a href="">Arts and Crafts for Girls</a></li>
+                                                        <li><a href="">Video Games for Girls</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu_item_children"><a href="#"> Fish & Seafood <i class="fa fa-angle-right"></i></a>
+                                            <ul class="categories_mega_menu column_2">
+                                                <li class="menu_item_children"><a href="#">Check Trousers</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Building</a></li>
+                                                        <li><a href="">Electronics</a></li>
+                                                        <li><a href="">action figures </a></li>
+                                                        <li><a href="">specialty & boutique toy</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu_item_children"><a href="#">Calculators</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        <li><a href="">Dolls for Girls</a></li>
+                                                        <li><a href="">Girls' Learning Toys</a></li>
+                                                        <li><a href="">Arts and Crafts for Girls</a></li>
+                                                        <li><a href="">Video Games for Girls</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"> Fresh Meat</a></li>
+                                        <li><a href="#"> Butter & Eggs</a></li>
+                                        <li><a href="#">Milk</a></li>
+                                        <li><a href="#">Oil & Vinegars</a></li>
+                                        <li><a href="#"> Bread</a></li>
+                                        <li><a href="#"> Jam & Honey</a></li>
+                                        <li><a href="#"> Frozen Food</a></li>
+                                        <li id="cat_toggle" class="has-sub"><a href="#">  More Items</a>
+                                            <ul class="categorie_sub">
+                                                <li><a href="#">Hide Categories</a></li>
+                                            </ul>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!--main menu start-->
+                            <div class="main_menu menu_position">
+                                <nav>
+                                    <ul>
+                                        <li><a  href="/shopstore/index">home<i class="fa fa-angle-down"></i></a>
+                                            <ul class="sub_menu">
+                                                <li><a href="/shopstore/index">Home shop 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega_items"><a href="/shopList">shop<i class="fa fa-angle-down"></i></a>
+                                            <div class="mega_menu">
+                                                <ul class="mega_menu_inner">
+                                                    <li><a href="/shopList">Shop Layouts</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="" th:href="@{/shopstore/toBlogDetails}">blog<i class="fa fa-angle-down"></i></a>
+                                            <ul class="sub_menu pages">
+                                                <li><a href="" th:href="@{/shopstore/toBlogDetails}">blog</a></li>
+                                                <li><a href="" th:href="@{/shopstore/toBlogSidebar}">blog sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">pages <i class="fa fa-angle-down"></i></a>
+                                            <ul class="sub_menu pages">
+                                                <li><a th:href="@{/shopstore/about}">关于我们</a></li>
+                                                <li><a th:href="@{/shopstore/service}">服务</a></li>
+                                                <li><a th:href="@{/shopstore/faq}">常见问题</a></li>
+                                                <li><a th:href="@{/shopstore/contact}">联系</a></li>
+                                                <li><a th:href="@{/shopstore/login}">登录</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="active" th:href="@{/shopstore/contact}"> 关于我们</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!--main menu end-->
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="call-support">
+                                <p><a href="tel:(08)23456789">(08) 23 456 789</a> 客户服务</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header area end-->
+
+
+
+
+
+<div style="width: 600px;margin: 20px auto">
+    <p>请认真填写,我们将在15个工作日类与你联系!</p>
+    <br/>
+    <form action="/addtemp" method="post">
+        <div class="form-group">
+            <label>姓名:</label>
+            <input type="text" class="form-control" name="name" placeholder="请输入你的姓名:">
+        </div>
+        <div class="form-group">
+            <label >联系方式:</label>
+            <input type="text" class="form-control" name="phone" placeholder="方便我们与你联系!">
+        </div>
+        <div class="form-group">
+            <label >你的邮箱:</label>
+            <input type="text" class="form-control" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label >产品名:</label>
+            <input type="text" class="form-control" name="tempname" placeholder="text">
+        </div>
+        <div class="form-group">
+            <label >你的地址:</label>
+            <input type="text" class="form-control" name="address" placeholder="地址:">
+        </div>
+        <div class="form-group">
+            <label >产品描述:</label>
+            <textarea name="Reason" style="width:380px;height: 200px;">
+
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-default">提交</button>
+    </form>
+
+</div>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--footer area start-->
+    <footer class="footer_widgets footer_border">
+        <div class="container">
+            <div class="footer_top">
+                <div class="row">
+                        <div class="col-lg-4 col-md-12 col-sm-7">
+                            <div class="widgets_container contact_us">
+                               <div class="footer_logo">
+                                   <a href="index.html"><img src="/assets/img/logo/logo.png" alt=""></a>
+                               </div>
+                               <p class="footer_desc">We are a team of designers and developers that create high quality eCommerce, WordPress, Shopify .</p>
+                                <p><span>Address:</span> 4710-4890 Breckinridge USA</p>
+                                <p><span>Email:</span> <a href="#">demo@hasthemes.com</a></p>
+                                <p><span>Call us:</span> <a href="tel:(08)23456789">(08) 23 456 789</a> </p>
+                            </div>          
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-5">
+                            <div class="widgets_container widget_menu">
+                                <h3>Information</h3>
+                                <div class="footer_menu">
+
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="#">Delivery Information</a></li>
+                                        <li><a href="#"> Privacy Policy</a></li>
+                                        <li><a href="#"> Terms & Conditions</a></li>
+                                        <li><a href="contact.html"> Contact Us</a></li>
+                                        <li><a href="#"> Site Map</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4">
+                            <div class="widgets_container widget_menu">
+                                <h3>Extras</h3>
+                                <div class="footer_menu">
+                                    <ul>
+                                        <li><a href="#">Brands</a></li>
+                                        <li><a href="#">  Gift Certificates</a></li>
+                                        <li><a href="#">Affiliate</a></li>
+                                        <li><a href="#">Specials</a></li>
+                                        <li><a href="#">Returns</a></li>
+                                        <li><a href="#"> Order History</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-8">
+                            <div class="widgets_container widget_newsletter">
+                                <h3>Sign up newsletter</h3>
+                                <p class="footer_desc">Get updates by subscribe our weekly newsletter</p>
+                                <div class="subscribe_form">
+                                    <form id="mc-form" class="mc-form footer-newsletter" >
+                                        <input id="mc-email" type="email" autocomplete="off" placeholder="Enter you email" />
+                                        <button id="mc-submit">Subscribe</button>
+                                    </form>
+                                    <!-- mailchimp-alerts Start -->
+                                    <div class="mailchimp-alerts text-centre">
+                                        <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                        <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                        <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                                    </div><!-- mailchimp-alerts end -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>     
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="copyright_area">
+                            <p>Copyright &copy; 2020.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+                        </div>
+                    </div>    
+                    <div class="col-lg-6 col-md-5">    
+                        <div class="footer_payment">
+                            <ul>
+                                <li><a href="#"><img src="/assets/img/icon/paypal1.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/icon/paypal2.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/icon/paypal3.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/icon/paypal4.jpg" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+             </div>   
+        </div>  
+    </footer>
+    <!--footer area end-->
+    
+    
+<!-- JS
+============================================ -->
+<!--jquery min js-->
+    <!--footer area end-->
+    <script th:src="@{/js/vendor/jquery-3.4.1.min.js}"></script>
+    <!--popper min js-->
+    <script th:src="@{/js/popper.js}"></script>
+    <!--bootstrap min js-->
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <!--owl carousel min js-->
+    <script th:src="@{/js/owl.carousel.min.js}"></script>
+    <!--slick min js-->
+    <script th:src="@{/js/slick.min.js}"></script>
+    <!--magnific popup min js-->
+    <script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+    <!--counterup min js-->
+    <script th:src="@{/js/jquery.counterup.min.js}"></script>
+    <!--jquery countdown min js-->
+    <script th:src="@{/js/jquery.countdown.js}"></script>
+    <!--jquery ui min js-->
+    <script th:src="@{/js/jquery.ui.js}"></script>
+    <!--jquery elevatezoom min js-->
+    <script th:src="@{/js/jquery.elevatezoom.js}"></script>
+    <!--isotope packaged min js-->
+    <script th:src="@{/js/isotope.pkgd.min.js}"></script>
+    <!--slinky menu js-->
+    <script th:src="@{/js/slinky.menu.js}"></script>
+    <!-- Plugins JS -->
+    <script th:src="@{/js/plugins.js}"></script>
+
+    <!-- Main JS -->
+    <script th:src="@{/js/main.js}"></script>
+
+
+
+</body>
+
+</html>

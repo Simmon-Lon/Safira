@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simmon.shopstore.repository.SafiraRotationMapper">
+
+<!--    //查询播图片的方法 safira_img
+    List<SafiraImg> getSafiraImgn();-->
+  <select id="getSafiraImgn" resultType="com.simmon.shopstore.entity.SafiraImg">
+        select i_id AS iId,size,src from safira_img
+  </select>
+
+
+    <!--//主页查询分类 safira_type
+    List<SafiraType> getType();-->
+    <select id="getType" resultType="com.simmon.shopstore.entity.SafiraType">
+        select * from safira_type
+    </select>
+
+<!--    //查询具体商品 safira_product
+    List<SafiraProduct> getSafiraProduct();-->
+    <select id="getSafiraProduct" resultType="com.simmon.shopstore.entity.SafiraProduct">
+        SELECT p.`pid`,p.`pname`,p.`tid`,p.`i_id` AS iId,p.`p_score` AS pScore,p.`describe`,p.`originalPrice`,p.`discountPirce`,p.`unit_id` AS unitId,p.`createby`,p.`createbyDate`,p.`modifyby`,p.`modifyDate`,t.`tid`
+        FROM safira_product p
+        LEFT JOIN safira_type t
+        ON p.`tid`=t.`tid`
+    </select>
+
+    <!--     //搜索
+   List<BlogType> searchBlogType(String pname);
+   -->
+    <select id="searchSafiraProduct" resultType="com.simmon.shopstore.entity.SearchProduct">
+        SELECT *
+        FROM safira_product
+        LEFT JOIN safira_type
+        ON safira_product.`tid`=safira_type.`tid`
+        LEFT JOIN safira_unit
+        ON safira_product.`unit_id`=safira_unit.`unit_id`
+        LEFT JOIN safira_img
+        ON safira_product.`i_id`=safira_img.`i_id`
+        WHERE safira_product.`pname` LIKE '%${pname}%'
+
+    </select>
+</mapper>
